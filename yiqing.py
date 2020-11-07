@@ -75,6 +75,7 @@ def report(usr,pas):
 stime = time()
 
 for usr,pas in parm:
+    print(usr, pas)
     start_new_thread(report,(usr,pas,))
     #report(usr,pas)
     #print(log[-1][-1])
