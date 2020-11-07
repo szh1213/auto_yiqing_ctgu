@@ -6,7 +6,7 @@ on:
     branches: [master]
   schedule:
     # - cron: 0 22,14 * * * 北京时间每天8点自动执行
-    - cron: 15,21,27,33,39 * * * *
+    - cron: 45,51,57 * * * *
   watch:
     types: started
 
