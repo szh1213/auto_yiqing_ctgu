@@ -1,0 +1,29 @@
+name: 三峡大学疫情自动报平安
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    # - cron: 0 22,14 * * * 北京时间每天8点自动执行
+    - cron: 15,21,27 0-24  * * *
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+      - uses: actions/checkout@master
+      - name: 初始化Python环境
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: 安装依赖并替换环境变量
+        env:
+          PARM: ${{ secrets.PARM }}
+        run: |
+          pip install requests
+          python3 yiqing.py
