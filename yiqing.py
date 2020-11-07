@@ -25,7 +25,7 @@ def report(usr,pas):
         q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
     r=sess.get('http://yiqing.ctgu.edu.cn/wx/index/login.do?currSchool=ctgu&\
                CURRENT_YEAR=2019&showWjdc=false&studentShowWjdc=false')
-    
+    print('成功')
     data=encode_multipart_formdata({'username':usr,'password':pas},
                                    '----WebKitFormBoundary5lPtCfVeRqiu7n6h')
     login=sess.post('http://yiqing.ctgu.edu.cn/wx/index/loginSubmit.do',data=data[0])
