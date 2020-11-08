@@ -75,8 +75,8 @@ def report(usr,pas):
 stime = time()
 
 for usr,pas in parm:
-    start_new_thread(report,(usr,pas,))
-    #report(usr,pas)
+    #start_new_thread(report,(usr,pas,))
+    report(usr,pas)
     #print(log[-1][-1])
 while True:
     if len(log)==len(parm):
