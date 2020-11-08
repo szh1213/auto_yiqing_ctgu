@@ -63,7 +63,7 @@ def report(usr,pas):
         'sffx':'',
         'qt':'',
     }
-    if False and his[0]['sbrq']!=today:
+    if True or his[0]['sbrq']!=today:
         for key in apply:
             apply[key] = his[0][key] if his[0][key]!=None else ''
         apply['ttoken']=findall('ttoken" value="(.*?)"',r.text) or findall('stoken=(.*?)&',r.url)[0]
