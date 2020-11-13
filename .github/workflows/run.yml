@@ -25,5 +25,5 @@ jobs:
         env:
           PARM: ${{ secrets.PARM }}
         run: |
-          pip install requests
+          #pip install requests
           python3 yiqing.py
