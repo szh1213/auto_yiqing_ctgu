@@ -2,13 +2,14 @@
 
 from requests import Session
 from urllib3 import encode_multipart_formdata
-from datetime import date
+from datetime import datetime,timedelta
 from re import findall
 from _thread import start_new_thread 
 from time import time,localtime,strftime
 import os
 parm = eval(os.environ['PARM'])
-today = date.today().strftime("%Y-%m-%d")
+tmp = datetime.today()+timedelta(hours=8)
+today = tmp.strftime("%Y-%m-%d")
 log = []
 
 def report(usr,pas):
