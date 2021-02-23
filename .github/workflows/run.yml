@@ -20,7 +20,7 @@ jobs:
       - name: 初始化Python环境
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7
+          python-version: 3.8.5
       - name: 安装依赖并替换环境变量
         env:
           PARM: ${{ secrets.PARM }}
